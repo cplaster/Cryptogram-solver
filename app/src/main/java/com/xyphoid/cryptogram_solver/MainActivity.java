@@ -32,7 +32,6 @@ import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class MainActivity extends ActionBarActivity {
@@ -242,26 +241,6 @@ public class MainActivity extends ActionBarActivity {
         return ret;
     }
 
-    private Set<String> filterResults(String subject, Set<String> list) {
-
-        String pattern = getWordPattern(subject);
-        boolean result = true;
-        this.filterList = new HashSet<String>();
-
-        for(String word : list) {
-            for(Integer i = 0; i < word.length(); i++) {
-                if(word.substring(i,i) == subject.substring(i,i)) {
-                    result = false;
-                }
-            }
-
-            if(result) {
-                filterList.add(word);
-            }
-        }
-
-        return filterList;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
